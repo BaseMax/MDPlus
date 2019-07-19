@@ -27,12 +27,14 @@ ApplicationWindow {
                 width: parent.width / 2
                 height: parent.height
                 focus: true
+                text: "#Hello\n# Hi!\n\nHow are you?"
                 function update() {
                     lines.text=processor.analyse(edit.text)
                 }
                 onLineCountChanged: update()
                 onHeightChanged: update()
                 onCursorPositionChanged: update()
+                //onEditingFinished: update()
             }
         }
 }
