@@ -32,5 +32,6 @@ Q_INVOKABLE QString SyntaxHighlighter::analyse(QString source)
     REPLACE("\\#( |)([^\n]+)", "<h1>"+reg.cap(2)+"</h1>", ("<h1>"+reg.cap(2)+"</h1>").length());
     REPLACE("([\n]{2,})", "<br>", 4);
     REPLACE("([\n])", " ", 1);
+    source="<style>*{direction:rtl; text-align: right;}</style><body dir='rtl'>" + source + "</body>";
     return source;
 }

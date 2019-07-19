@@ -8,6 +8,12 @@ ApplicationWindow {
     height: 480
     color: "#f1f1f1"
     visible: true
+    function update() {
+        lines.text=processor.analyse(edit.text)
+    }
+    Component.onCompleted: {
+        windows.update()
+    }
         Row{
             width: parent.width
             height: parent.height
@@ -27,13 +33,10 @@ ApplicationWindow {
                 width: parent.width / 2
                 height: parent.height
                 focus: true
-                text: "#Hello\n# Hi!\n\nHow are you?"
-                function update() {
-                    lines.text=processor.analyse(edit.text)
-                }
-                onLineCountChanged: update()
-                onHeightChanged: update()
-                onCursorPositionChanged: update()
+                text: "#Hello\n# Hi!\n\nHow are you?\n"
+                onLineCountChanged: windows.update()
+                onHeightChanged: windows.update()
+                onCursorPositionChanged: windows.update()
                 //onEditingFinished: update()
             }
         }
