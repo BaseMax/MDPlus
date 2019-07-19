@@ -2,12 +2,8 @@
 #include <QString>
 #include <QObject>
 
-//SyntaxHighlighter::SyntaxHighlighter(QObject *parent) : QObject(parent)
-//{
-
-//}
-
-QString SyntaxHighlighter::analyse(QString source)
+Q_INVOKABLE QString SyntaxHighlighter::analyse(QString source)
 {
+    source.replace("\n", "<br>");
     return source;
 }

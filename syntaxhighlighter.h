@@ -3,12 +3,11 @@
 #include <QString>
 #include <QObject>
 
-class SyntaxHighlighter
+class SyntaxHighlighter : public QObject
 {
+  Q_OBJECT
 public:
-    //SyntaxHighlighter();
-//    explicit SyntaxHighlighter(QObject *parent = 0);
-    QString analyse(QString source);
+    Q_INVOKABLE QString analyse(QString source);
 };
 
 #endif // SYNTAXHIGHLIGHTER_H
